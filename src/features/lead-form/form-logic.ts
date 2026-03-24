@@ -16,7 +16,6 @@ export function useLeadForm() {
     defaultValues: {
       fullName: "",
       phone: "",
-      product: "Odonto",
       contractingType: "CNPJ",
       livesCount: "2 a 5",
       city: "",
@@ -34,9 +33,9 @@ export function useLeadForm() {
         localizacao: data.city,
         whatsapp: data.phone,
       });
-      
+
       if (error) throw error;
-      
+
     } catch (error) {
       console.error("Erro ao salvar lead:", error);
       // Even if Supabase fails, we still want to redirect to WhatsApp
