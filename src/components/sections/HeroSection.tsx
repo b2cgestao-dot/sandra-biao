@@ -32,12 +32,12 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/public/familiamobile1.jpg"
+          src="/familiamobile1.jpg"
           className="w-full h-full object-cover opacity-60 md:hidden"
           alt=""
         />
         <img
-          src="/public/familia2.jpg"
+          src="/familia2.jpg"
           className="w-full h-full object-cover opacity-60 hidden md:block"
           alt=""
         />
