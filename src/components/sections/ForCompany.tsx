@@ -61,7 +61,9 @@ export function ForCompany() {
               ))}
             </ul>
 
-            <button className="btn-premium btn-premium-primary w-full sm:w-auto px-12 py-5">
+            <button 
+              className="btn-premium btn-premium-primary w-full sm:w-auto px-12 py-5"
+            >
               <span>Agendar Consultoria Grátis</span>
             </button>
           </div>

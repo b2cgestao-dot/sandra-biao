@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLeadForm } from "./form-logic";
 import { FormFields } from "./FormFields";
 import clsx from "clsx";
@@ -20,8 +21,8 @@ export function LeadForm({ isEmbedded = false }: { isEmbedded?: boolean }) {
         </div>
       )}
 
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <FormFields control={form.control} isDark={isEmbedded} isLoading={isLoading} />
+      <form onSubmit={form.handleSubmit(onSubmit, (errors) => console.log("Erros de validação (Submit Final):", errors))}>
+        <FormFields control={form.control} trigger={form.trigger} isDark={isEmbedded} isLoading={isLoading} />
         <p className={clsx(
           "text-[10px] mt-4 text-center flex items-center justify-center gap-1.5 uppercase tracking-wider",
           isEmbedded ? "text-white/30" : "text-muted-foreground/50"

@@ -17,6 +17,9 @@ export function useLeadForm() {
       fullName: "",
       phone: "",
       product: "Odonto",
+      contractingType: "CNPJ",
+      livesCount: "2 a 5",
+      city: "",
     },
   });
 
