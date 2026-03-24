@@ -1,0 +1,36 @@
+﻿src/features/lead-form/form-logic.ts(3,26): error TS1484: 'LeadFormValues' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/features/lead-form/form-schema.ts(8,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: readonly ["Odonto", "Pivida", "Ambos"], params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Object literal may only specify known properties, and 'errorMap' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(entries: Readonly<Record<string, EnumValue>>, params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Argument of type 'readonly ["Odonto", "Pivida", "Ambos"]' is not assignable to parameter of type 'Readonly<Record<string, EnumValue>>'.
+      Index signature for type 'string' is missing in type 'readonly ["Odonto", "Pivida", "Ambos"]'.
+src/features/lead-form/form-schema.ts(11,22): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: readonly ["CNPJ", "MEI", "Ainda vou abrir", "Aut├┤nomo PF"], params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Object literal may only specify known properties, and 'errorMap' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(entries: Readonly<Record<string, EnumValue>>, params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Argument of type 'readonly ["CNPJ", "MEI", "Ainda vou abrir", "Aut├┤nomo PF"]' is not assignable to parameter of type 'Readonly<Record<string, EnumValue>>'.
+      Index signature for type 'string' is missing in type 'readonly ["CNPJ", "MEI", "Ainda vou abrir", "Aut├┤nomo PF"]'.
+src/features/lead-form/form-schema.ts(14,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: readonly ["2 a 5", "6 a 15", "16 a 30", "Acima de 30"], params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Object literal may only specify known properties, and 'errorMap' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(entries: Readonly<Record<string, EnumValue>>, params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Argument of type 'readonly ["2 a 5", "6 a 15", "16 a 30", "Acima de 30"]' is not assignable to parameter of type 'Readonly<Record<string, EnumValue>>'.
+      Index signature for type 'string' is missing in type 'readonly ["2 a 5", "6 a 15", "16 a 30", "Acima de 30"]'.
+src/features/lead-form/form-schema.ts(17,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: readonly ["Feira de Santana", "Salvador", "Lu├¡s Eduardo Magalh├úes", "Barreiras", "Outra cidade da Bahia", "Outro estado"], params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Object literal may only specify known properties, and 'errorMap' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(entries: Readonly<Record<string, EnumValue>>, params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Argument of type 'readonly ["Feira de Santana", "Salvador", "Lu├¡s Eduardo Magalh├úes", "Barreiras", "Outra cidade da Bahia", "Outro estado"]' is not assignable to parameter of type 'Readonly<Record<string, EnumValue>>'.
+      Index signature for type 'string' is missing in type 'readonly ["Feira de Santana", "Salvador", "Lu├¡s Eduardo Magalh├úes", "Barreiras", "Outra cidade da Bahia", "Outro estado"]'.
+src/features/lead-form/form-schema.ts(20,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: readonly ["O quanto antes", "Pr├│ximos 30 dias", "Pesquisando"], params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Object literal may only specify known properties, and 'errorMap' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(entries: Readonly<Record<string, EnumValue>>, params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidValue<unknown>> | undefined; message?: string | undefined; } | undefined): ZodEnum<...>', gave the following error.
+    Argument of type 'readonly ["O quanto antes", "Pr├│ximos 30 dias", "Pesquisando"]' is not assignable to parameter of type 'Readonly<Record<string, EnumValue>>'.
+      Index signature for type 'string' is missing in type 'readonly ["O quanto antes", "Pr├│ximos 30 dias", "Pesquisando"]'.
+src/features/lead-form/FormFields.tsx(1,10): error TS1484: 'Control' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/features/lead-form/FormFields.tsx(2,10): error TS1484: 'LeadFormValues' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/features/lead-form/FormFields.tsx(6,78): error TS6133: 'Phone' is declared but its value is never read.
+src/hooks/useWhatsApp.ts(3,10): error TS1484: 'LeadFormValues' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/lib/constants.ts(1,10): error TS1484: 'SocialProofStats' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
