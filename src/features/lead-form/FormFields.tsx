@@ -1,4 +1,4 @@
-import type { Control, UseFormTrigger } from "react-hook-form";
+import type { Control } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import type { LeadFormValues } from "./form-schema";
 import { FORM_OPTIONS } from "../../lib/constants";
@@ -10,12 +10,11 @@ import { cn } from "../../lib/utils";
 
 interface FormFieldsProps {
   control: Control<LeadFormValues>;
-  trigger: UseFormTrigger<LeadFormValues>;
   isDark?: boolean;
   isLoading?: boolean;
 }
 
-export function FormFields({ control, trigger, isDark = false, isLoading = false }: FormFieldsProps) {
+export function FormFields({ control, isDark = false, isLoading = false }: FormFieldsProps) {
   // ---- FIELD RENDERERS ----
   const nameField = (
     <Controller
