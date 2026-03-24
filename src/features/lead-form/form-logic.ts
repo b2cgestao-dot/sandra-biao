@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { leadFormSchema } from "./form-schema";
@@ -6,6 +7,7 @@ import { useWhatsApp } from "../../hooks/useWhatsApp";
 import { supabase } from "../../lib/supabase";
 
 export function useLeadForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const { redirectToWhatsApp } = useWhatsApp();
 
   const form = useForm<LeadFormValues>({
@@ -19,16 +21,27 @@ export function useLeadForm() {
   });
 
   const onSubmit = async (data: LeadFormValues) => {
-    await supabase.from("sandra_biao_leads").insert({
-      nome: data.fullName,
-      perfil: data.contractingType,
-      quantas_vidas: data.livesCount,
-      localizacao: data.city,
-      whatsapp: data.phone,
-    });
-
-    redirectToWhatsApp(data);
+    setIsLoading(true);
+    try {
+      // Save lead to Supabase
+      const { error } = await supabase.from("sandra_biao_leads").insert({
+        nome: data.fullName,
+        perfil: data.contractingType,
+        quantas_vidas: data.livesCount,
+        localizacao: data.city,
+        whatsapp: data.phone,
+      });
+      
+      if (error) throw error;
+      
+    } catch (error) {
+      console.error("Erro ao salvar lead:", error);
+      // Even if Supabase fails, we still want to redirect to WhatsApp
+    } finally {
+      setIsLoading(false);
+      redirectToWhatsApp(data);
+    }
   };
 
-  return { form, onSubmit };
+  return { form, onSubmit, isLoading };
 }

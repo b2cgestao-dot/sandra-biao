@@ -3,7 +3,7 @@ import { FormFields } from "./FormFields";
 import clsx from "clsx";
 
 export function LeadForm({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const { form, onSubmit } = useLeadForm();
+  const { form, onSubmit, isLoading } = useLeadForm();
 
   return (
     <div id="lead-form" className={clsx(
@@ -21,7 +21,7 @@ export function LeadForm({ isEmbedded = false }: { isEmbedded?: boolean }) {
       )}
 
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <FormFields control={form.control} isDark={isEmbedded} />
+        <FormFields control={form.control} isDark={isEmbedded} isLoading={isLoading} />
         <p className={clsx(
           "text-[10px] mt-4 text-center flex items-center justify-center gap-1.5 uppercase tracking-wider",
           isEmbedded ? "text-white/30" : "text-muted-foreground/50"

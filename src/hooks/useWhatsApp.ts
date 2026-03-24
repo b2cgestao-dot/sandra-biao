@@ -21,7 +21,7 @@ export function useWhatsApp() {
   const redirectToWhatsApp = useCallback((data: LeadFormValues) => {
     const text = generateMessage(data);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-    window.open(url, "_blank");
+    window.location.href = url;
   }, [generateMessage]);
 
   return { redirectToWhatsApp };
