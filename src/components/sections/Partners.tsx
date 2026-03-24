@@ -5,14 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const logos = [
-  { name: "Unimed", url: "/public/hdi-seguros-logo.png" },
-  { name: "Amil", url: "/public/azulseguros-removebg-preview.png" },
-  { name: "Porto Seguro", url: "/public/portoseguro.png" },
-  { name: "Bradesco Seguros", url: "/public/bradescoseguros.png" },
-  { name: "SulAmérica", url: "/public/sulamerica.png" },
-  { name: "HapVida", url: "/public/hapvida-logo.png" },
-  { name: "CAPI", url: "/public/capi.png" },
-  { name: "União Médica", url: "/public/uniao-medica.webp" },
+  { name: "Unimed", url: "/hdi-seguros-logo.png" },
+  { name: "Amil", url: "/azulseguros-removebg-preview.png" },
+  { name: "Porto Seguro", url: "/portoseguro.png" },
+  { name: "Bradesco Seguros", url: "/bradescoseguros.png" },
+  { name: "SulAmérica", url: "/sulamerica.png" },
+  { name: "HapVida", url: "/hapvida-logo.png" },
+  { name: "CAPI", url: "/capi.png" },
+  { name: "União Médica", url: "/uniao-medica.webp" },
 ];
 
 // Split logos into pairs for mobile view

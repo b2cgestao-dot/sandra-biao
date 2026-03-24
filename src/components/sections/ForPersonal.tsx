@@ -15,12 +15,12 @@ export function ForPersonal() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/public/familiamobile2.jpg"
+          src="/familiamobile2.jpg"
           className="w-full h-full object-cover md:hidden"
           alt=""
         />
         <img
-          src="/public/familia1.jpg"
+          src="/familia1.jpg"
           className="w-full h-full object-cover hidden md:block"
           alt=""
         />

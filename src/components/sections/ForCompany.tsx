@@ -16,7 +16,7 @@ export function ForCompany() {
           <div className="w-full lg:w-1/2 relative space-y-6">
             <div className="rounded-[4rem] overflow-hidden shadow-12xl -skew-y-1 relative group bg-transparent">
               <img
-                src="/public/juliobião.png"
+                src="/juliobião.png"
                 className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
