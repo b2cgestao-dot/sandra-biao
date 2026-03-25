@@ -63,7 +63,7 @@ export function ForCompany() {
 
             <a 
               href="#contato"
-              className="btn-premium btn-premium-primary w-full sm:w-auto px-12 py-5 flex items-center justify-center"
+              className="btn-premium btn-premium-primary px-12 py-5 inline-flex items-center justify-center w-fit"
             >
               <span>Agendar Consultoria Grátis</span>
             </a>
