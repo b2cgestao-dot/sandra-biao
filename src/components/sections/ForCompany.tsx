@@ -61,11 +61,12 @@ export function ForCompany() {
               ))}
             </ul>
 
-            <button 
-              className="btn-premium btn-premium-primary w-full sm:w-auto px-12 py-5"
+            <a 
+              href="#contato"
+              className="btn-premium btn-premium-primary w-full sm:w-auto px-12 py-5 flex items-center justify-center"
             >
               <span>Agendar Consultoria Grátis</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

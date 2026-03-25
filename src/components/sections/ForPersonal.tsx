@@ -59,10 +59,10 @@ export function ForPersonal() {
               ))}
             </div>
 
-            <button className="btn-premium btn-premium-accent btn-shimmer group px-10 py-5 flex items-center gap-3">
+            <a href="#contato" className="btn-premium btn-premium-accent btn-shimmer group px-10 py-5 flex items-center gap-3">
               <span>Solicitar Minha Cotação</span>
               <ShieldCheck className="group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            </a>
           </div>
 
           <div className="w-full lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 gap-5">
