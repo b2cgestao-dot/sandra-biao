@@ -42,7 +42,7 @@ export function ForCompany() {
                 Benefício estratégico para <br /> reter talentos e <span className="text-accent underline decoration-primary/10 underline-offset-4">reduzir faltas</span>
               </h2>
               <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-lg pt-2">
-                Sua empresa precisa de mais do que uma apólice. O plano odontológico é o benefício mais solicitado por colaboradores e o que mais gera percepção de valor imediato.
+                Sua empresa precisa mais do que uma apólice. O plano odontológico é o benefício mais solicitado por colaboradores e o que mais gera percepção de valor imediato.
               </p>
             </div>
 
