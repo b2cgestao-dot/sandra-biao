@@ -10,7 +10,7 @@ export function About() {
             {/* Main photo container */}
             <div className="rounded-2xl md:rounded-[3rem] overflow-hidden shadow-xl relative aspect-[4/5] bg-gray-100">
               <img
-                src="/SandraBiao.jpeg"
+                src="/sandrabiao2.jpeg"
                 alt="Sandra Bião"
                 className="w-full h-full object-cover"
               />

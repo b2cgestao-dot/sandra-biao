@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="bg-[#011035] text-white pt-20 pb-8 relative z-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
+
           {/* Brand/Bio */}
           <div className="space-y-6">
             <h3 className="font-heading font-bold text-2xl tracking-tighter italic">Sandra Bião</h3>
@@ -40,7 +40,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-white/60 font-body">
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-accent" />
-                (75) 98801-9213 
+                (75) 98801-9213
               </li>
               <li>Feira de Santana - Bahia</li>
               <li>biaosaudediretoria@gmail.com</li>
