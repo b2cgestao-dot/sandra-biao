@@ -28,14 +28,8 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-accent">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-accent hover:text-primary transition-all duration-300">
+              <a href="https://www.instagram.com/sandrabiao/" className="p-3 bg-white/5 rounded-full hover:bg-accent hover:text-primary transition-all duration-300">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-accent hover:text-primary transition-all duration-300">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-accent hover:text-primary transition-all duration-300">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -46,10 +40,10 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-white/60 font-body">
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-accent" />
-                (75) 99999-9999
+                (75) 98801-9213 
               </li>
               <li>Feira de Santana - Bahia</li>
-              <li>contato@sandrabiao.com.br</li>
+              <li>biaosaudediretoria@gmail.com</li>
             </ul>
           </div>
         </div>
