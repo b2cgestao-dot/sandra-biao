@@ -11,7 +11,6 @@ const logos = [
   { name: "Bradesco Seguros", url: "/bradescoseguros.png" },
   { name: "SulAmérica", url: "/sulamerica.png" },
   { name: "HapVida", url: "/hapvida-logo.png" },
-  { name: "CAPI", url: "/capi.png" },
   { name: "União Médica", url: "/uniao-medica.webp" },
 ];
 
