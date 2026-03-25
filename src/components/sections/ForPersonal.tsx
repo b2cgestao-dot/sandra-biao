@@ -45,9 +45,12 @@ export function ForPersonal() {
 
             <div className="space-y-4">
               {[
-                "Atendimento presencial em Feira de Santana",
-                "Planos a partir de 2 vidas (você + 1)",
-                "Rede com Santa Casa, HTO, Santa Emília e Rafáh"
+                "Atendimento Nacional com ampla rede de credenciados em Feira de Santana",
+                "Planos que cabem no seu bolso",
+                "Telemedicina 24 h por dia",
+                "Teleorientação Odontológica",
+                "Descontos em Medicamentos",
+                "Sem carência"
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="text-accent" size={20} />
