@@ -27,7 +27,7 @@ export function About() {
             </h2>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Sandra Bião não é mais uma corretora. É uma especialista que construiu ao longo de três décadas uma carteira de <strong>37.000 vidas</strong>, sendo 20 mil no odonto e 17 mil no saúde. Esse número não é marketing, é registro real.
+                Sandra Bião não é apenas uma corretora, mas uma especialista que construiu ao longo de três décadas uma carteira de <strong>37.000 vidas</strong>, sendo 20 mil no odonto e 17 mil no saúde. Esse número não é marketing, é registro real.
               </p>
               <p className="text-primary font-medium">
                 Em Feira de Santana, quando um empresário precisa de plano, o nome que aparece é Sandra Bião. Não por propaganda. Por resultado.

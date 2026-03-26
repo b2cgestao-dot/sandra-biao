@@ -30,7 +30,7 @@ export function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
           <h2 className="text-2xl md:text-4xl font-bold font-heading text-primary leading-tight text-center">
-            Empresários que já confiam <br />há anos
+            Depoimentos de Empresários que já são <br /> assesorados por Sandra Bião
           </h2>
           <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
             Resultados reais de quem escolheu experiência no lugar de preço.
@@ -39,14 +39,14 @@ export function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((t, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group p-8 rounded-[2.5rem] bg-gray-50 border border-transparent hover:border-accent/30 hover:bg-white hover:shadow-2xl transition-all duration-500 relative"
             >
               <div className="absolute top-6 right-8 text-accent/20 group-hover:text-accent/40 transition-colors">
                 <Quote size={40} fill="currentColor" />
               </div>
-              
+
               <div className="flex gap-1 mb-6">
                 {[...Array(t.stars)].map((_, idx) => (
                   <Star key={idx} size={16} className="fill-accent text-accent" />

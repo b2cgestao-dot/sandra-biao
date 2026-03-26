@@ -11,6 +11,7 @@ const logos = [
   { name: "SulAmérica", url: "/sulamerica.png" },
   { name: "HapVida", url: "/hapvida-logo.png" },
   { name: "União Médica", url: "/uniao-medica.webp" },
+  { name: "unimed CNU", url: "/unimed-cnu.png" },
 ];
 
 // Split logos into pairs for mobile view
