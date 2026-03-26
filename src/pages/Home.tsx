@@ -5,6 +5,7 @@ import { HeroSection } from "../components/sections/HeroSection";
 
 // Lazy loading the components that are below the fold
 const Partners = lazy(() => import("../components/sections/Partners").then(module => ({ default: module.Partners })));
+const TopClients = lazy(() => import("../components/sections/TopClients").then(module => ({ default: module.TopClients })));
 const About = lazy(() => import("../components/sections/About").then(module => ({ default: module.About })));
 const ForPersonal = lazy(() => import("../components/sections/ForPersonal").then(module => ({ default: module.ForPersonal })));
 const ForCompany = lazy(() => import("../components/sections/ForCompany").then(module => ({ default: module.ForCompany })));
@@ -27,6 +28,7 @@ export function Home() {
         <Suspense fallback={<SectionLoader />}>
           <Partners />
           <About />
+          <TopClients />
           <ForPersonal />
           <ForCompany />
           <Testimonials />

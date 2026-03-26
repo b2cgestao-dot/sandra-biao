@@ -5,9 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const logos = [
-  { name: "Unimed", url: "/hdi-seguros-logo.png" },
-  { name: "Amil", url: "/azulseguros-removebg-preview.png" },
-  { name: "Porto Seguro", url: "/portoseguro.png" },
+  { name: "Unimed Odonto", url: "/unimed-odonto.png" },
+  { name: "Seguros Unimed", url: "/segurosunimed.png" },
   { name: "Bradesco Seguros", url: "/bradescoseguros.png" },
   { name: "SulAmérica", url: "/sulamerica.png" },
   { name: "HapVida", url: "/hapvida-logo.png" },

@@ -9,11 +9,11 @@ const navLinks = [
   { name: "Contato", href: "#contato" },
 ];
 
-// Selectors for sections with light (white/gray) backgrounds
-// The navbar text will switch to primary (blue) when over these
+// 1. Incluímos a nova seção na lista original
 const LIGHT_SECTION_SELECTORS = [
   ".partners-section",
   "#quem-somos",
+  ".top-clients-section", // Sua nova seção está aqui agora
   ".for-company-section",
   ".credit-section",
   ".testimonials-section",
@@ -31,43 +31,16 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Detect if navbar overlaps a light-background section
   useEffect(() => {
     const lightSections = LIGHT_SECTION_SELECTORS
       .map((sel) => document.querySelector(sel))
       .filter(Boolean) as Element[];
 
-    if (lightSections.length === 0) return;
-
-    const visibleLightSections = new Set<Element>();
-
-    // rootMargin: only observe the top 80px strip of the viewport (navbar zone)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleLightSections.add(entry.target);
-          } else {
-            visibleLightSections.delete(entry.target);
-          }
-        });
-        setIsOverLight(visibleLightSections.size > 0);
-      },
-      {
-        // Top 80px strip: negative bottom margin crops everything below 80px from top
-        rootMargin: "0px 0px -100% 0px",
-      }
-    );
-
-    // We need a custom rootMargin that only targets the navbar area.
-    // rootMargin "-0px 0px -calc(100% - 80px) 0px" isn't supported, so we use scroll-based detection.
-    observer.disconnect();
-
-    // Fall back to scroll-based detection for precise navbar-zone overlap
     const checkOverlap = () => {
-      const navbarBottom = 80; // px from top of viewport
+      const navbarBottom = 80;
       let overLight = false;
 
+      // Detecta sobreposição com seções claras
       for (const section of lightSections) {
         const rect = section.getBoundingClientRect();
         if (rect.top < navbarBottom && rect.bottom > 0) {
@@ -76,25 +49,27 @@ export function Header() {
         }
       }
 
-      // Check if still in hero
+      // Detecta se ainda estamos na Hero
       const hero = document.querySelector('.hero-section');
       if (hero) {
         const heroRect = hero.getBoundingClientRect();
-        setIsInHero(heroRect.bottom > navbarBottom);
+        // Se o fundo da hero ainda está visível na zona da navbar
+        setIsInHero(heroRect.bottom > 60);
+      } else {
+        // Fallback se a classe .hero-section não existir
+        setIsInHero(window.scrollY < 100);
       }
 
       setIsOverLight(overLight);
     };
 
     window.addEventListener("scroll", checkOverlap, { passive: true });
-    checkOverlap(); // initial check
+    // Executa imediatamente para definir o estado inicial
+    checkOverlap();
 
-    return () => {
-      window.removeEventListener("scroll", checkOverlap);
-    };
+    return () => window.removeEventListener("scroll", checkOverlap);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -117,7 +92,7 @@ export function Header() {
     }
   }, []);
 
-  // Dynamic color classes based on background
+  // Cores dinâmicas (idênticas às originais que você enviou)
   const textColor = isOverLight ? "text-primary" : "text-white";
   const textColorMuted = isOverLight ? "text-primary/70" : "text-white/80";
   const pillBg = isOverLight
@@ -127,16 +102,12 @@ export function Header() {
 
   return (
     <>
-      <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      >
-        {/* ── Hero-only: bare nav links ── */}
-        <div
-          className={cn(
-            "absolute top-0 left-0 right-0 flex items-center justify-center gap-1 py-5 transition-all duration-500",
-            isInHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-          )}
-        >
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        {/* Nav no Hero (Links "Nus") */}
+        <div className={cn(
+          "absolute top-0 left-0 right-0 flex items-center justify-center gap-1 py-5 transition-all duration-500",
+          isInHero ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        )}>
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
@@ -150,47 +121,27 @@ export function Header() {
               </a>
             ))}
           </nav>
-
-          {/* Mobile hamburger for hero */}
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden absolute right-5 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
-            aria-label="Menu"
-          >
-            <Menu size={18} />
-          </button>
         </div>
 
-        {/* ── Full pill navbar — appears after hero ── */}
-        <div
-          className={cn(
-            "transition-all duration-500",
-            isInHero
-              ? "opacity-0 -translate-y-6 pointer-events-none"
-              : "opacity-100 translate-y-0",
-            isScrolled ? "py-2 px-3 md:px-6" : "py-4 px-4 md:px-8"
-          )}
-        >
-          <div
-            className={cn(
-              "mx-auto max-w-6xl flex items-center justify-between rounded-full px-5 md:px-8 transition-all duration-500",
-              isScrolled ? "py-2.5" : "py-3",
-              pillBg
-            )}
-          >
-            {/* Logo */}
+        {/* Navbar em Pílula */}
+        <div className={cn(
+          "transition-all duration-500",
+          isInHero ? "opacity-0 -translate-y-6 pointer-events-none" : "opacity-100 translate-y-0",
+          isScrolled ? "py-2 px-3 md:px-6" : "py-4 px-4 md:px-8"
+        )}>
+          <div className={cn(
+            "mx-auto max-w-6xl flex items-center justify-between rounded-full px-5 md:px-8 transition-all duration-500",
+            isScrolled ? "py-2.5" : "py-3",
+            pillBg
+          )}>
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, "#home")}
-              className={cn(
-                "font-heading font-black text-xl md:text-2xl tracking-tighter transition-all duration-500 hover:text-accent cursor-pointer select-none",
-                textColor
-              )}
+              className={cn("font-heading font-black text-xl md:text-2xl tracking-tighter transition-all duration-500", textColor)}
             >
               SANDRA BIÃO
             </a>
 
-            {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
@@ -209,96 +160,30 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA Button */}
             <a
               href="#contato"
               onClick={(e) => handleNavClick(e, "#contato")}
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent text-primary text-[10px] font-bold uppercase tracking-widest
-                hover:bg-white hover:scale-[1.03] active:scale-[0.98]
-                transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
-                shadow-lg shadow-accent/20 cursor-pointer select-none"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent text-primary text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:scale-[1.03] transition-all shadow-lg"
             >
               Área do Cliente
             </a>
 
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen((v) => !v)}
-              className={cn(
-                "md:hidden relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500",
-                hamburgerBg
-              )}
-              aria-label="Menu"
-            >
-              <span className={cn(
-                "absolute transition-all duration-300",
-                mobileOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
-              )}>
-                <Menu size={18} />
-              </span>
-              <span className={cn(
-                "absolute transition-all duration-300",
-                mobileOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
-              )}>
-                <X size={18} />
-              </span>
+            <button onClick={() => setMobileOpen(!mobileOpen)} className={cn("md:hidden relative w-10 h-10 flex items-center justify-center rounded-full", hamburgerBg)}>
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 z-40 transition-all duration-500 md:hidden",
-          mobileOpen ? "visible" : "invisible pointer-events-none"
-        )}
-      >
-        {/* Backdrop */}
-        <div
-          className={cn(
-            "absolute inset-0 bg-primary/90 backdrop-blur-2xl transition-opacity duration-500",
-            mobileOpen ? "opacity-100" : "opacity-0"
-          )}
-          onClick={() => setMobileOpen(false)}
-        />
-
-        {/* Mobile nav links */}
+      {/* Menu Mobile Overlay */}
+      <div className={cn("fixed inset-0 z-40 transition-all duration-500 md:hidden", mobileOpen ? "visible" : "invisible pointer-events-none")}>
+        <div className={cn("absolute inset-0 bg-primary/90 backdrop-blur-2xl transition-opacity duration-500", mobileOpen ? "opacity-100" : "opacity-0")} onClick={() => setMobileOpen(false)} />
         <nav className="relative z-10 flex flex-col items-center justify-center h-full gap-2">
           {navLinks.map((link, i) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={cn(
-                "text-2xl font-bold text-white/90 hover:text-accent uppercase tracking-widest py-4 transition-all duration-500",
-                mobileOpen
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              )}
-              style={{
-                transitionDelay: mobileOpen ? `${i * 80 + 100}ms` : "0ms",
-              }}
-            >
+            <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-2xl font-bold text-white/90 py-4 transition-all uppercase tracking-widest" style={{ transitionDelay: mobileOpen ? `${i * 80 + 100}ms` : "0ms" }}>
               {link.name}
             </a>
           ))}
-
-          <a
-            href="#contato"
-            onClick={(e) => handleNavClick(e, "#contato")}
-            className={cn(
-              "mt-6 px-8 py-3 rounded-full bg-accent text-primary text-xs font-bold uppercase tracking-widest transition-all duration-500",
-              mobileOpen
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6"
-            )}
-            style={{
-              transitionDelay: mobileOpen ? `${navLinks.length * 80 + 100}ms` : "0ms",
-            }}
-          >
-            Área do Cliente
-          </a>
         </nav>
       </div>
     </>
