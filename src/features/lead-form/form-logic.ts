@@ -41,7 +41,7 @@ export function useLeadForm() {
 
       // 2. Send webhook to N8N
       try {
-        await fetch("https://wb.projetosb2cgestao.com.br/webhook/sandrabiao", {
+        await fetch("https://wk.projetosb2cgestao.com.br/webhook/sandrabiao", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
