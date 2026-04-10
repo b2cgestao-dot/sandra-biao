@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+antigravity-awesome-skills
 node_modules
 dist
 dist-ssr
